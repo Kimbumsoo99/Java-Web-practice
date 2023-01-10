@@ -45,10 +45,6 @@ public class Sort {
 //		System.out.println();
 	}
 	
-	
-
-
-
 	public int[] choice(int[] a) {
 		int tempValue, tempJ = 0;
 		for (int i = 0; i < a.length; i++) { 
