@@ -24,6 +24,8 @@
 		</c:otherwise>
 	</c:choose>
 	<hr>
+	<br>
+	<c:forEach begin="0" end="10" var="i" varStatus="state">${i}, ${state.index}, ${state.count} <br></c:forEach>
 	<a href="forEach">게시물 조회</a>
 </body>
 </html>

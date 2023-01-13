@@ -1,2 +1,12 @@
 /.metadata/
 *.jar
+*.classpath
+*.project
+*.jsdtscope
+*.gitignore
+*.xml
+*.component
+*.container
+*.name
+*.MF
+*.prefs

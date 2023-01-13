@@ -4,11 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import sku.vo.Board;
 
@@ -25,7 +28,24 @@ public class ForEachTestServlet extends HttpServlet {
     }
 
 
+    @Override
+    	public void init() throws ServletException {
+    		//list를 생성해서 게시물 3개를 미리 application 영역에  저장
+    		ServletContext application = super.getServletContext();
+    		//application.setAttribute("board", board);
+    		
+    	}
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//HttpSession 구하기
+		HttpSession session = request.getSession();
+		//ServletContext 구하기
+		ServletContext application = request.getServletContext();
+		
+		//로그 아웃이 될 때 모든 세션의 정보를 삭제
+		session.invalidate();
+		
+		
 		//List 생성 후 -> 뷰 전달
 		List<Board> boardList = new ArrayList<>();
 		boardList.add(new Board(10, "작성자", "제목", "내용"));
