@@ -8,6 +8,9 @@
 <style type="text/css">
 h3 {
 	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 </style>
 </head>
