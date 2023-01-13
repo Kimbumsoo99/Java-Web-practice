@@ -43,7 +43,10 @@ public class ForEachTestServlet extends HttpServlet {
 		boardList.add(new Board(10, "안지윤", "SQL", "데이터베이스"));
 		boardList.add(new Board(10, "요호호", "SQL", "헬롱"));
 		
-		
+		//뷰쪽에 전달된 데이터 scope에 저장하기
+		request.setAttribute("boardList", boardList);	//뷰에서 ${requestScope.boardList] 사용
+		//뷰로이동
+		request.getRequestDispatcher("ex03_result.jsp").forward(request, response);
 	}
 
 }
