@@ -9,6 +9,7 @@
 <body>
 	<jsp:include page="top.jsp"/>
 	<h1>여기는 main.jsp 입니다.</h1>
+	<a href="list.jsp">게시물 보러가자!!</a>
 	<jsp:include page="bottom.jsp"/>
 </body>
 </html>

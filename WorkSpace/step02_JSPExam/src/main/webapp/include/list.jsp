@@ -1,4 +1,3 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>여기는 메뉴 부분입니다.^^ - 집에가고싶다</h3>
-	현재 시간 : <%=new Date().toLocaleString() %>
+	<jsp:include page="top.jsp" />
+	<h2>게시물 출력하기</h2>
+	<hr>
+	<jsp:include page="bottom.jsp"/>
+	
 </body>
 </html>
