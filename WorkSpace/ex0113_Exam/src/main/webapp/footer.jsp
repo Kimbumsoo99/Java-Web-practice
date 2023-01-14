@@ -4,17 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>footer</title>
 <style type="text/css">
-h3 {
-	text-align: center;
-	display: flex;
+#footer {
+	clear:left;
+	border: solid 1px black;
+	width: 1200px;
+	height: 100px;
+}
+
+#footer-name {
+	margin: 30px auto; display : flex;
 	justify-content: center;
 	align-items: center;
+	display: flex;
 }
 </style>
 </head>
 <body>
-	<h3>작성자 : Kimbumsoo</h3>
+	<div id="footer">
+		<h3 id="footer-name">작성자 : Kimbumsoo</h3>
+	</div>
 </body>
 </html>

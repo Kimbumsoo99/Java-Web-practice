@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet {
 	String dbId="Kim" , dbPwd="1234";
 	public LoginServlet() {
-		System.out.println("LoginServlet 생성자 호출");
+		System.out.println("ddLoginServlet 생성자 호출");
 	}
 	
 	@Override
@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		//브라우저에서 한글 띄우기 위해 사용(스크립트)
 		res.setContentType("text/html; charset=UTF-8");
-		System.out.println("서비스 호출");
+		System.out.println("dd서비스 호출");
 		//post방식 한글 인코딩설정
 		req.setCharacterEncoding("UTF-8");
 		//전송된 정보를 받는다.
