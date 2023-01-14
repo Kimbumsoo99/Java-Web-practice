@@ -23,7 +23,7 @@ import sku.vo.BoardDTO;
 @WebServlet(name = "BoardServlet", urlPatterns = { "/board" }, loadOnStartup=1 )
 public class BoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	List<BoardDTO> boardList = new ArrayList<>();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -38,8 +38,7 @@ public class BoardServlet extends HttpServlet {
 	public void init() throws ServletException {
 		System.out.println("init 호출");
 		ServletContext application = super.getServletContext();
-		
-		List<BoardDTO> boardList = new ArrayList<>();
+
 		boardList.add(new BoardDTO(10,"제목", "내용"));
 		boardList.add(new BoardDTO(10, "JSTL", "라이브러리"));
 		boardList.add(new BoardDTO(10,  "JSP", "태그"));
@@ -52,7 +51,18 @@ public class BoardServlet extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		ServletContext application = super.getServletContext();
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		
+		int gno = Integer.parseInt(request.getParameter("gno")); 
+		String subject = request.getParameter("subject");
+		String content = request.getParameter("content");
+		
+		boardList.add(new BoardDTO(gno,subject,content));
+		application.setAttribute("boardList", boardList);
+		
+		response.sendRedirect("center.jsp");
 	}
 
 }

@@ -32,8 +32,8 @@
 </head>
 <body>
 	<div id=top>
-		<a href="#" class="top-banner">게시판</a> <a href="#" class="top-banner">MyPage</a>
-		<a href="#" class="top-banner">Q&A</a>
+		<a href="index.jsp" class="top-banner">게시판</a> <a href="myPage.html" class="top-banner">MyPage</a>
+		<a href="QA.html" class="top-banner">Q&A</a>
 	</div>
 </body>
 </html>
