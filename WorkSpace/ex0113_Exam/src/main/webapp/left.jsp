@@ -16,6 +16,10 @@
 					type="password" name="userPwd" /><br /> <input type="submit"
 					value="로그인" /> <input type="submit" value="취소" />
 			</form>
+			<script>
+				//window.parent.location.reload();
+				//window.parent.location.href = index.jsp;
+			</script>
 		</c:when>
 		<c:otherwise>
 			<p>${sessionScope.userId}님로그인중</p>
@@ -24,15 +28,6 @@
 			<a href="logout">로그아웃</a>
 		</c:otherwise>
 	</c:choose>
-	<script>
-		setTimeout(function() {
-			if (top.location != window.location)
-				top.location.reload();
-			if (window.opener) {
-				window.opener.top.location.reload();
-				self.close();
-			}
-		}, 3000);
-	</script>
+
 </body>
 </html>
