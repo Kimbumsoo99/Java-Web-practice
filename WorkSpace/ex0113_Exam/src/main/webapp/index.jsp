@@ -6,12 +6,15 @@
 <meta charset="UTF-8">
 <title>index</title>
 <style type="text/css">
-header{ width: 800px; height: 50px ; background-color: skyblue;}
+*{
+margin: 0px;
+}
+header{ width: 800px; height: 50px ; background-color: skyblue; border: solid 1px black;}
 section{width: 800px;height: 400px;}
-article{float : left;}
-#left{width: 300px; height: 400px;  }
-#center{width: 500px; height: 400px;  }
-footer{width: 800px;height: 50px;clear: both; background-color: skyblue;}
+article{float : left;border: solid 1px black;}
+#left{width: 298px; height: 400px; background-color: orange;  }
+#center{width: 499px; height: 400px;  }
+footer{width: 800px;height: 50px;clear: both; background-color: skyblue;border: solid 1px black;}
 
 a {
 	text-decoration: none;

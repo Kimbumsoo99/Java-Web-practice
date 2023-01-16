@@ -32,9 +32,9 @@
 	<!-- 인증된 경우 게시물 등록 기능 -->
 	<c:if test="${not empty userId}">
 		<form action="${pageContext.request.contextPath}/board" method="post">
-			글번호 : <input type="number" name="gno" id="gno" />
-			제목 : <input type="text" name="subject" />
-			내용 : <input type="text" name="content" />
+			글번호 : <input type="number" name="gno" id="gno" /><br/>
+			제목 : <input type="text" name="subject" /><br/>
+			내용 : <input type="text" name="content" /><br/>
 			<input type="submit" value="등록하기" />
 		</form>
 	</c:if>
