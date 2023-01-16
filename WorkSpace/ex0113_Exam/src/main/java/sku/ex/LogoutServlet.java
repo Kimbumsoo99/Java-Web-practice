@@ -1,6 +1,8 @@
 package sku.ex;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +31,11 @@ public class LogoutServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		response.sendRedirect("left.jsp");
+		PrintWriter out = response.getWriter();
+		
+		out.println("<script>");
+		out.println("top.location.href='index.jsp'");
+		out.println("</script>");
 	}
 
 }

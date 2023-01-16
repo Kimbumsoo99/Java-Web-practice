@@ -11,20 +11,17 @@
 <body>
 	<c:choose>
 		<c:when test="${empty sessionScope.userId}">
-			<form action="login" method="post">
-				ID : <input type="text" name="userId" /><br /> PWD : <input
-					type="password" name="userPwd" /><br /> <input type="submit"
-					value="로그인" /> <input type="submit" value="취소" />
+			<form action="${pageContext.request.contextPath}/login" method="post">
+				ID : <input type="text" name="userId"  size="10"/><br /> 
+				PWD : <input type="password" name="userPwd"  size="10"/><br /> 
+				<input type="submit" value="로그인" /> 
+				<input type="submit" value="취소" />
 			</form>
-			<script>
-				//window.parent.location.reload();
-				//window.parent.location.href = index.jsp;
-			</script>
 		</c:when>
 		<c:otherwise>
 			<p>${sessionScope.userId}님로그인중</p>
 			<p>
-				[접속시간 : ${sessionScope.date}<br />${time}]</p>
+				[접속시간 : ${sessionScope.date}<br/>${time}]</p>
 			<a href="logout">로그아웃</a>
 		</c:otherwise>
 	</c:choose>

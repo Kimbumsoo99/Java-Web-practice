@@ -24,24 +24,18 @@ import sku.vo.BoardDTO;
 public class BoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	List<BoardDTO> boardList = new ArrayList<>();
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BoardServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
 
 	/**
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init() throws ServletException {
-		System.out.println("init 호출");
+		System.out.println("BoardServlet init 호출");
 		ServletContext application = super.getServletContext();
 
 		boardList.add(new BoardDTO(10,"제목", "내용"));
-		boardList.add(new BoardDTO(10, "JSTL", "라이브러리"));
-		boardList.add(new BoardDTO(10,  "JSP", "태그"));
+		boardList.add(new BoardDTO(20, "JSTL", "라이브러리"));
+		boardList.add(new BoardDTO(30,  "JSP", "태그"));
 		
 		application.setAttribute("boardList", boardList);  
 		
@@ -60,7 +54,7 @@ public class BoardServlet extends HttpServlet {
 		String content = request.getParameter("content");
 		
 		boardList.add(new BoardDTO(gno,subject,content));
-		application.setAttribute("boardList", boardList);
+		//application.setAttribute("boardList", boardList);	//이게 없어도 상관이없다함 왜냐면 이미 application은 board를 가리키고있으니까
 		
 		response.sendRedirect("center.jsp");
 	}

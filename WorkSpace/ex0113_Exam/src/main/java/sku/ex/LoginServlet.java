@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-
+		PrintWriter out = response.getWriter();
 		//SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		
 		
@@ -45,21 +45,24 @@ public class LoginServlet extends HttpServlet {
 		
 		if(dbId.equals(userId) && dbPwd.equals(userPwd)) {
 			session.setAttribute("userId", userId);
-			session.setAttribute("userPwd", userPwd);
 			
 			long loginTime = session.getLastAccessedTime(); 
 			SimpleDateFormat sf1 = new SimpleDateFormat("yyyy. M. d.");
 			SimpleDateFormat sf2 = new SimpleDateFormat("a h:m:s");			
 			String date = sf1.format(new Date(loginTime));
 			String time = sf2.format(new Date(loginTime));
+			
 			session.setAttribute("date", date);
 			session.setAttribute("time", time);
-			response.sendRedirect("left.jsp");
+			
+			out.println("<script>");
+			out.println("top.location.href='index.jsp'");
+			out.println("</script>");
+			//response.sendRedirect("left.jsp");
 			//request.getRequestDispatcher("center.jsp").forward(request, response);
 			//request.getRequestDispatcher("left.jsp").forward(request, response);
 		}
 		else {
-			PrintWriter out = response.getWriter();
 			out.println("<script>");
 			out.println("alert('확인되지 않은 유저입니다!');");
 			out.println("history.back();");

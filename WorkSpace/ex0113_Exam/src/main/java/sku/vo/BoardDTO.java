@@ -7,6 +7,7 @@ public class BoardDTO {
 	private String subject;
 	private String content;
 	
+	public BoardDTO() {}
 	public BoardDTO(int gno, String subject, String content) {
 		super();
 		this.gno = gno;

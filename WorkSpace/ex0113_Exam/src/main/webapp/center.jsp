@@ -7,69 +7,36 @@
 <meta charset="UTF-8">
 <title>center</title>
 <style type="text/css">
-.body{
-	width: 500px;
-}
-.board{
-text-align: center;
-}
-#board-title {
-	margin-top: 30px;
-	text-align: center;
-}
-
-#gno {
-	width: 5em;
-	-webkit-appearance: none;
-}
-
-table {
-	text-align: center;
-	width: 400px;
-	border: 3px double red;
-	border-collapse: collapse;
-}
-
-th, td {
-	padding: 3px;
-	border: 1px black solid;
-	text-align: center;
-}
+	table{width: 300px; border: double pink 2px;border-collapse: collapse; }
+	th,td{text-align: center; border: solid black 1px;}
 </style>
 </head>
 <body>
-	<div class="body">
-		<div class="board">
-			<h2 id="board-title">Board LIST</h2>
-			<table style="margin-left: auto; margin-right: auto">
-				<tr>
-					<th>no</th>
-					<th>subject</th>
-					<th>content</th>
-				</tr>
-				<c:forEach items="${applicationScope.boardList}" var="boardList"
-					varStatus="state">
-					<tr>
-						<td>${boardList.gno}</td>
-						<td>${boardList.subject}</td>
-						<td>${boardList.content}</td>
-					</tr>
-				</c:forEach>
-			</table>
-		</div>
-		<c:if test="${not empty userId}">
-			<div class="reg">
-				<form action="board" method="post">
-					글번호 : <input type="number" name="gno" id="gno" /><br/><br/> 제목 : <input
-						type="text" name="subject" /><br /><br/> 내용 : <input type="text"
-						name="content" /><br /><br/> <input type="submit" value="등록하기" />
-				</form>
-			</div>
-	</div>
+	<h2>Board LIST</h2>
+	<table>
+		<tr>
+			<th>no</th>
+			<th>subject</th>
+			<th>content</th>
+		</tr>
+		<!-- 기본 데이터 출력 -->
+		<c:forEach items="${boardList}" var="board">
+		<tr>
+		  <td>${board.gno}</td>
+		  <td>${board.subject}</td>
+		  <td>${board.content}</td>
+		</tr>
+		</c:forEach>
+	</table>
+
+	<!-- 인증된 경우 게시물 등록 기능 -->
+	<c:if test="${not empty userId}">
+		<form action="${pageContext.request.contextPath}/board" method="post">
+			글번호 : <input type="number" name="gno" id="gno" />
+			제목 : <input type="text" name="subject" />
+			내용 : <input type="text" name="content" />
+			<input type="submit" value="등록하기" />
+		</form>
 	</c:if>
-
-
-
-
 </body>
 </html>
