@@ -32,7 +32,7 @@ public class DeleteMember extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		int dbCheck = dao.deleteUser(id);
 		System.out.println("DB 성공 여부 = "+dbCheck);
-		resp.sendRedirect("selectAll");
+		resp.sendRedirect("select");
 	}
 
 }

@@ -24,7 +24,24 @@ a {
 	text-decoration: none
 }
 </style>
-
+<script type="text/javascript">
+	//호이스팅 개념!!
+	function searchInfo(){
+		//keyFiled와 keyWord에 값이 있는지 체크한다.
+		if(document.search.keyField.value=="3"){
+			alert("검색필드를 선택해주세요.");
+			document.search.keyField.focus();
+			return;
+		}
+		if(document.search.keyWord.value==""){
+			alert("검색단어를 입력하세요.");
+			document.search.keyWord.focus();
+			return;
+		}
+		//여기까지 오면 전송한다.
+		document.search.submit(); //폼 전송
+	}
+</script>
 </head>
 
 <body>
@@ -57,7 +74,7 @@ a {
 					<c:forEach items="${member}" var="member" varStatus="state">
 						<tr>
 							<td>${state.count}</td>
-							<td>${member.id}</td>
+							<td><a href="detail?id=${member.id}">${member.id}</a></td>
 							<td>${member.pwd}</td>
 							<td>${member.name}</td>
 							<td>${member.age}</td>
@@ -72,14 +89,18 @@ a {
 
 		</table>
 		<p>
-		<form name="search" action="" method="post">
+		<form name="search" action="searchBy" method="post">
 			<select name="keyField">
-				<option value="0">--선택--</option>
+				<!-- <option value="0">--선택--</option>
 				<option value="id">아이디</option>
 				<option value="name">이름</option>
-				<option value="addr">주소</option>
-			</select> <input type="text" name="keyWord" /> <input type="button"
-				value="검색" />
+				<option value="addr">주소</option> -->
+				<option value="3">--선택--</option>
+				<option value="0">아이디</option>
+				<option value="1">이름</option>
+				<option value="2">주소</option>
+			</select> <input type="text" name="keyWord" /> 
+			<input type="button" value="검색" onclick="searchInfo()"/>
 
 		</form>
 	</div>

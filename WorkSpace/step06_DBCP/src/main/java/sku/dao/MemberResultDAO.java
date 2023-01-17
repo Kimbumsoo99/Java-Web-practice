@@ -31,7 +31,7 @@ public interface MemberResultDAO {
 	 * (만약 없는 아이디를 검색해도 테이블 구조는 온다)
 	 * 또한 이녀석은 Primary Key로 조건을 주기때문에 반드시 한문장만 온다 그래서 MemberDTO가 반환값
 	 * */
-	MemberDTO select(String id);
+	MemberDTO selectById(String id);
 	
 	/**
 	 * 주소 or 아이디 or 이름에 포함된 문자열 포함된 레코드 검색

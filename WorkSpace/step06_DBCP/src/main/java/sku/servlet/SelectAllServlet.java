@@ -26,7 +26,6 @@ public class SelectAllServlet extends HttpServlet {
 		MemberResultDAO memberDao = new MemberDAOimpl();
 		List<MemberDTO> memberList = memberDao.selectAll(); 	//전체검색
 		
-		System.out.println(memberList);
 		//뷰쪽에 전달할 정보 저장
 		request.setAttribute("member", memberList);  //뷰에서 ${list}
 		
