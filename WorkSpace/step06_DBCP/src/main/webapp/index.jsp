@@ -9,7 +9,7 @@
 <body>
 	<script type="text/javascript">
 		//urlpattern이 selecAll인 서블릿을 찾아 이동한다.
-		location.href = "selectAll";
+		location.href = "${pageContext.request.contextPath}/selectAll";
 	</script>
 </body>
 </html>

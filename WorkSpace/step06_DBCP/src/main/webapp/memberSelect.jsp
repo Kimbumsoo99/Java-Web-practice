@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
@@ -9,75 +9,80 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
-  table{width:100%; border:5px dobule red}
-  th,td{padding:5px; border: 1px solid pink ; text-align: center }
-  a{text-decoration: none}
- </style>
+table {
+	width: 100%;
+	border: 5px dobule red
+}
+
+th, td {
+	padding: 5px;
+	border: 1px solid pink;
+	text-align: center
+}
+
+a {
+	text-decoration: none
+}
+</style>
 
 </head>
 
 <body>
+	<div style="text-align: center;">
+		<h1>[ 회원 정보 LIST ]</h1>
+		<table cellspacing="0">
+			<tr>
+				<th colspan="9" style="text-align: right"><a
+					href="memberForm.html">[ 회원가입 ]</a>&nbsp;&nbsp;&nbsp; <a
+					href="index.jsp">[ 새로고침 ]</a>&nbsp;&nbsp;&nbsp;</th>
+			</tr>
+			<tr bgColor="pink">
+				<th>번호</th>
+				<th>아이디</th>
+				<th>비밀번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>주소</th>
+				<th>연락처</th>
+				<th>가입일</th>
+				<th>삭제</th>
+			</tr>
+			<c:choose>
+				<c:when test="${empty member}">
+					<tr>
+						<th colspan="9"><b>검색된 정보가 없습니다.</b></th>
+					</tr>
+				</c:when>
+				<c:otherwise>
+					<c:forEach items="${member}" var="member" varStatus="state">
+						<tr>
+							<td>${state.count}</td>
+							<td>${member.id}</td>
+							<td>${member.pwd}</td>
+							<td>${member.name}</td>
+							<td>${member.age}</td>
+							<td>${member.addr}</td>
+							<td>${member.phone}</td>
+							<td>${member.joinDate}</td>
+							<td><input type="button" value="삭제" onclick="location.href='deleteMember?id=${member.id}'"></td>
+						</tr>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
 
+		</table>
+		<p>
+		<form name="search" action="" method="post">
+			<select name="keyField">
+				<option value="0">--선택--</option>
+				<option value="id">아이디</option>
+				<option value="name">이름</option>
+				<option value="addr">주소</option>
+			</select> <input type="text" name="keyWord" /> <input type="button"
+				value="검색" />
 
-
-<center>
- <h1>[ 회원 정보 LIST ]</h1>
-<table cellspacing="0">
-  <tr>
-    <th colspan="9" style="text-align:right">
-      <a href="memberForm.html">[ 회원가입 ]</a>&nbsp;&nbsp;&nbsp;
-      <a href="selectAll">[ 새로고침 ]</a>&nbsp;&nbsp;&nbsp;
-    </th>
-  </tr>
-  <tr bgColor="pink">
-    <th>번호</th>
-    <th>아이디</th>
-    <th>비밀번호</th>
-    <th>이름</th>
-    <th>나이</th>
-    <th>주소</th>
-    <th>연락처</th>
-    <th>가입일</th>
-    <th>삭제</th>
-  </tr>
-	<c:forEach items="${member}" var="member" varStatus="state">
-	<tr>
-	  <td>${state.count}</td>
-	  <td>${member.id}</td>
-	  <td>${member.pwd}</td>
-	  <td>${member.name}</td>
-	  <td>${member.age}</td>
-	  <td>${member.addr}</td>
-	  <td>${member.phone}</td>
-	  <td>${member.joinDate}</td>
-	  <td><input type="submit" value="삭제"></td>
-	</tr>
-	</c:forEach>
- 
-</table>
-<p>
-
-<form name="search" action="" method="post">
- <select name="keyField">
-   <option value="0">--선택--</option>
-   <option value="id">아이디</option>
-   <option value="name">이름</option>
-   <option value="addr">주소</option>
- </select>
- 
-<input type="text" name="keyWord"/>
-<input type="button" value="검색" />  
-
-</form>
-
-
-
-
-
-</center>
-
-
-
+		</form>
+	</div>
 </body>
 </html>
 

@@ -10,7 +10,10 @@ public class MemberDTO {
 	private String joinDate;
 	
 	public MemberDTO() {}
-
+	
+	/**
+	 * id, pwd, name, age, phone, addr, joinDate
+	 * */
 	public MemberDTO(String id, int pwd, String name, int age, String phone, String addr, String joinDate) {
 		super();
 		this.id = id;

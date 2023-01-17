@@ -29,9 +29,9 @@ public class CreateMember extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		
 		String id = req.getParameter("id");
 		int pwd = Integer.parseInt(req.getParameter("pwd"));
 		String name = req.getParameter("name");
@@ -44,6 +44,11 @@ public class CreateMember extends HttpServlet {
 
 		MemberDAO dao = new MemberDAO();
 		int dbCheck = dao.createUser(member);
+		if(dbCheck<=0) {
+			//에러
+		}else {
+			//서블릿호출
+		}
 		System.out.println("DB 성공 여부 = "+dbCheck);
 		resp.sendRedirect("selectAll");
 	}

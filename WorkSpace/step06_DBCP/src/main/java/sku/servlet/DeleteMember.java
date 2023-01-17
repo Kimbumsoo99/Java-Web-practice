@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import sku.dao.MemberDAO;
+
 /**
  * Servlet implementation class DeleteMember
  */
@@ -25,8 +27,12 @@ public class DeleteMember extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.service(req, resp);
+		String id = req.getParameter("id");
+		System.out.println(id);
+		MemberDAO dao = new MemberDAO();
+		int dbCheck = dao.deleteUser(id);
+		System.out.println("DB 성공 여부 = "+dbCheck);
+		resp.sendRedirect("selectAll");
 	}
 
 }
