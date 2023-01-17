@@ -77,7 +77,21 @@ public class MemberDAOimpl implements MemberResultDAO {
 
 	@Override
 	public int delete(String id) {
-		return 0;
+		Connection con = null;
+		PreparedStatement ps = null;
+		String sql = "DELETE FROM MEMBER WHERE ID=?";
+		int result=0;
+		try {
+			con=DBUtil.getConnection();
+			ps=con.prepareStatement(sql);
+			ps.setString(1, id);
+			result = ps.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.dbClose(con, ps);
+		}
+		return result;
 	}
 
 	@Override
@@ -147,6 +161,30 @@ public class MemberDAOimpl implements MemberResultDAO {
 			DBUtil.dbClose(con, ps, rs);
 		}//메소드 끝
 		return memberlist;
+	}
+
+	@Override
+	public int update(MemberDTO member) {
+		Connection con = null;
+		PreparedStatement ps = null;
+		String sql = "update member set name=?,age=?,addr=? where id=?";
+		int result=0;
+		try {
+			con=DBUtil.getConnection();
+			ps=con.prepareStatement(sql);
+			ps.setString(1, member.getName());
+			ps.setInt(2, member.getAge());
+			ps.setString(3, member.getAddr());
+			ps.setString(4, member.getId());
+			result = ps.executeUpdate();
+			System.out.println(member.getName() +member.getAge() +member.getAddr() + member.getId());
+			System.out.println("수정시도 : "+sql);
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.dbClose(con, ps);
+		}
+		return result;
 	}
 
 }

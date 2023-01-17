@@ -14,7 +14,8 @@
 </style>
 </head>
 <body>
-<h1 style="text-align: center">${member.name} 회원 상세보기</h1>
+<h1 style="text-align: center">${member.name} 회원 수정</h1>
+<form method="post" action="${pageContext.request.contextPath}/update">
 <table cellspacing="0" align="center">
   <tr>
 	<td width="100px">ID</td>
@@ -26,11 +27,11 @@
   </tr>
   <tr>
 	<td>NAME</td>
-	<td>${member.name }</td>
+	<td><input type="text" name="name" value="${member.name}"/></td>
   </tr>
   <tr>
 	<td>age</td>
-	<td>${member.age }</td>
+	<td><input type="text" name="age" value="${member.age}"/></td>
   </tr>
   <tr>
 	<td>Phone</td>
@@ -38,7 +39,7 @@
   </tr>
   <tr>
 	<td>Addr</td>
-	<td>${member.addr }</td>
+	<td><input type="text" name="addr" value="${member.addr}" size="50"/></td>
   </tr>
     <tr>
 	<td>JoinDate</td>
@@ -46,11 +47,12 @@
   </tr>
   <tr>
 	<td colspan="2" style="text-align: center;background-color: pink">
-	<input type="button" value="메인" onclick="location.href='index.jsp'"/>
-	<a href="${pageContext.request.contextPath}/updateForm?id=${member.id}">수정하기</a>
+	<input type="submit" value="수정 완료"/>
 	</td>
 	
   </tr>
   </table> 
+  <input type="hidden" name="id" value="${member.id}">
+</form>
 </body>
 </html>

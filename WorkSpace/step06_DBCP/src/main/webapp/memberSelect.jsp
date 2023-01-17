@@ -81,7 +81,7 @@ a {
 							<td>${member.addr}</td>
 							<td>${member.phone}</td>
 							<td>${member.joinDate}</td>
-							<td><input type="button" value="삭제" onclick="location.href='deleteMember?id=${member.id}'"></td>
+							<td><input type="button" value="삭제" onclick="location.href='delete?id=${member.id}'"></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>

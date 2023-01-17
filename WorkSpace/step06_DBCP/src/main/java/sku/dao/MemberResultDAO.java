@@ -42,4 +42,9 @@ public interface MemberResultDAO {
 	 * */
 	List<MemberDTO> selectByFieldAndWord(String keyFiled, String keyWord);
 		
+	/**
+	 * 아이디에 해당하는 회원 정보 수정 (이름, 나이, 주소)
+//	 * update member set name=?,age=?,addr=? where id=?;
+	 * */
+	int update(MemberDTO member);
 }
