@@ -1,6 +1,8 @@
 package sku.servlet;
 
 import java.io.IOException;
+import java.net.URLEncoder;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,7 +42,7 @@ public class UpdateServlet extends HttpServlet {
 			request.setAttribute("errMsg", id + "에 해당하는 회원 정보가 없습니다.");
 			request.getRequestDispatcher("error.jsp").forward(request, response);
 		} else {
-			response.sendRedirect("detail?id="+id);
+			response.sendRedirect("detail?id="+URLEncoder.encode(id,"UTF-8"));
 		}
 	}
 }
