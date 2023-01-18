@@ -1,4 +1,4 @@
-package kosta.mvc.paging;
+package sku.mvc.paging;
 
 public class PageCnt {
 	private static int pageCnt; //총페이지 수Math.ceil(전체레코드수 /pagesize) 

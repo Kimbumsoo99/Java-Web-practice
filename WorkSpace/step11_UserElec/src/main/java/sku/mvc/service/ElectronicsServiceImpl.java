@@ -1,12 +1,12 @@
-package kosta.mvc.service;
+package sku.mvc.service;
 
 import java.io.File;
 import java.sql.SQLException;
 import java.util.List;
 
-import kosta.mvc.dao.ElectronicsDAO;
-import kosta.mvc.dao.ElectronicsDAOImpl;
-import kosta.mvc.dto.Electronics;
+import sku.mvc.dao.ElectronicsDAO;
+import sku.mvc.dao.ElectronicsDAOImpl;
+import sku.mvc.dto.Electronics;
 
 public class ElectronicsServiceImpl implements ElectronicsService {
 	private ElectronicsDAO elecDAO = new ElectronicsDAOImpl();

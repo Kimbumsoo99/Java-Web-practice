@@ -1,9 +1,9 @@
-package kosta.mvc.dao;
+package sku.mvc.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import kosta.mvc.dto.Electronics;
+import sku.mvc.dto.Electronics;
 
 public interface ElectronicsDAO {
 	 /**

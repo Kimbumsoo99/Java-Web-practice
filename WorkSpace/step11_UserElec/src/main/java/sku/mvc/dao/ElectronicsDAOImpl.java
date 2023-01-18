@@ -1,4 +1,4 @@
-package kosta.mvc.dao;
+package sku.mvc.dao;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import kosta.mvc.dto.Electronics;
-import kosta.mvc.dto.Reply;
-import kosta.mvc.dto.UserDTO;
-import kosta.mvc.paging.PageCnt;
-import kosta.mvc.util.DbUtil;
+import sku.mvc.dto.Electronics;
+import sku.mvc.dto.Reply;
+import sku.mvc.dto.UserDTO;
+import sku.mvc.paging.PageCnt;
+import sku.mvc.util.DbUtil;
 
 public class ElectronicsDAOImpl implements ElectronicsDAO {
   private Properties proFile = new Properties();
@@ -229,7 +229,7 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 
 			ps.setString(1, modelNum);
 			ps.setString(2, password);
-			
+			System.out.println("가나"+modelNum+password);
 			result = ps.executeUpdate();
 		}finally {
 			DbUtil.dbClose(con, ps);

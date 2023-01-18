@@ -1,4 +1,4 @@
-package kosta.mvc.controller;
+package sku.mvc.controller;
 
 import java.io.IOException;
 import java.util.Map;

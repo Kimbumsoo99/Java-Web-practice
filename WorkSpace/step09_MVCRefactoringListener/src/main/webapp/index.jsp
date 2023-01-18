@@ -16,6 +16,8 @@
   <a href="${path}/front?key=delete">삭제하기</a><p> 
   <a href="${path}/front?key=insert">등록하기</a><p> 
   
+  <a href="${path}/front?key=login">로그인</a><p> 
+  
  </h4>
 
 

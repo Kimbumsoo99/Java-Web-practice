@@ -1,4 +1,4 @@
-package kosta.mvc.listener;
+package sku.mvc.listener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import kosta.mvc.controller.Controller;
+import sku.mvc.controller.Controller;
 
 /**
  * 서버가 시작될때 각 Conroller의 구현객체를 미리 생성해서 Map에 저장한후

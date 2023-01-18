@@ -1,9 +1,9 @@
-package kosta.mvc.service;
+package sku.mvc.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import kosta.mvc.dto.Electronics;
+import sku.mvc.dto.Electronics;
 
 public interface ElectronicsService{
 	/**

@@ -1,4 +1,4 @@
-package kosta.mvc.dto;
+package sku.mvc.dto;
 
 public class UserDTO {
    private String userId; //DB user_id

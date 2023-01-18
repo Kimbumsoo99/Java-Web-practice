@@ -1,4 +1,4 @@
-package kosta.mvc.controller;
+package sku.mvc.controller;
 /**
  * 각 Controller의 구현체들이 실행된 후 이동해야하는 페이지 정보와
  * 이동방식에 대한 속성을 관리하는 객체

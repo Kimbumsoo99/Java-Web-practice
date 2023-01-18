@@ -1,4 +1,4 @@
-package kosta.mvc.controller;
+package sku.mvc.controller;
 
 import java.io.IOException;
 
@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import kosta.mvc.dto.UserDTO;
-import kosta.mvc.service.UserService;
-import kosta.mvc.service.UserServiceImpl;
+import sku.mvc.dto.UserDTO;
+import sku.mvc.service.UserService;
+import sku.mvc.service.UserServiceImpl;
 
 public class UserController implements Controller {
 	

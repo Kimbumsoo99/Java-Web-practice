@@ -1,4 +1,4 @@
-package kosta.mvc.util;
+package sku.mvc.util;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

@@ -1,4 +1,4 @@
-package kosta.mvc.listener;
+package sku.mvc.listener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import kosta.mvc.controller.Controller;
+import sku.mvc.controller.Controller;
 
 /**
  * 서버가 시작될때 각 Conroller의 구현객체를 미리 생성해서 Map에 저장한후
@@ -26,13 +26,15 @@ public class HandlerMappingListener implements ServletContextListener {
     	
     	
     	//생성해야하는 객체들의 정보를 가지고있는 ~.properties파일을 로딩!
-    	ServletContext application = e.getServletContext();
+    	/*ServletContext application = e.getServletContext();
     	String fileName = application.getInitParameter("fileName");
     	System.out.println("fileName = " + fileName);
     	
     	ResourceBundle rb =
-    			ResourceBundle.getBundle(fileName); //actionMapping.properties 로딩
-        
+    			ResourceBundle.getBundle(fileName); //actionMapping.properties 로딩*/
+    	
+    	ServletContext application = e.getServletContext();
+    	ResourceBundle rb =	ResourceBundle.getBundle("actionMapping");
     	
     	/*
     	 *  String의 문자열을 Controller라는 객체로 생성해야한다.

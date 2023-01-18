@@ -194,7 +194,7 @@ img{width:200px; height:350px}
 </div>
 <hr color="red">
 
-   <jsp:useBean class="kosta.mvc.paging.PageCnt" id="p"/> 
+   <jsp:useBean class="sku.mvc.paging.PageCnt" id="p"/> 
    
    \${p.pageCnt} = ${p.pageCnt} / \${p.blockcount}   = ${p.blockcount}  <p>
 

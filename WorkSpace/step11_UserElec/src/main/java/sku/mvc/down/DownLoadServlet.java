@@ -1,4 +1,4 @@
-package kosta.mvc.down;
+package sku.mvc.down;
 
 import java.io.File;
 import java.io.FileInputStream;

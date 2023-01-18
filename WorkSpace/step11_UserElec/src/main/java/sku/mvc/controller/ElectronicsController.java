@@ -1,4 +1,4 @@
-package kosta.mvc.controller;
+package sku.mvc.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import kosta.mvc.dto.Electronics;
-import kosta.mvc.service.ElectronicsService;
-import kosta.mvc.service.ElectronicsServiceImpl;
+import sku.mvc.dto.Electronics;
+import sku.mvc.service.ElectronicsService;
+import sku.mvc.service.ElectronicsServiceImpl;
 
 public class ElectronicsController implements Controller {
 	

@@ -1,8 +1,8 @@
-package kosta.mvc.dao;
+package sku.mvc.dao;
 
 import java.sql.SQLException;
 
-import kosta.mvc.dto.UserDTO;
+import sku.mvc.dto.UserDTO;
 
 public interface UserDAO {
   /**

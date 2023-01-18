@@ -1,9 +1,9 @@
- package kosta.mvc.service;
+ package sku.mvc.service;
 
 import java.sql.SQLException;
 
-import kosta.mvc.dto.UserDTO;
-import kosta.mvc.exception.AuthenticationException;
+import sku.mvc.dto.UserDTO;
+import sku.mvc.exception.AuthenticationException;
 
 public interface UserService {
 	/**

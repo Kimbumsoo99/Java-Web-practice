@@ -1,4 +1,4 @@
-package kosta.mvc.dto;
+package sku.mvc.dto;
 
 public class Reply {
    private int replyNum;

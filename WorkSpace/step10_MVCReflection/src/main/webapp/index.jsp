@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
  <h2>MVC Refactoring & Reflection TEST </h2>
  
  <h3>
@@ -29,7 +30,12 @@
     <a href="${path}/front?key=board&methodName=list">게시판 LIST</a><p>
     <a href="${path}/front?key=board&methodName=read">상세보기</a><p>
  </h3>
-
+ <hr>
+	<h3>
+		주문하기 - OrderController <p>
+		<a href="${path}/front?key=order&methodName=orderInsert">주문하기</a><p>
+		<a href="${path}/front?key=order&methodName=orderInfo">주문상세보기</a><p>
+	</h3>
 
 </body>
 </html>
