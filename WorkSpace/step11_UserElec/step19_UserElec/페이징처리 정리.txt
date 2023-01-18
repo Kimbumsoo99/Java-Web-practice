@@ -1,0 +1,14 @@
+ - 페이징 처리
+   1) 전체레코드수 (게시물의 개수) 
+
+   2) 한페이지당 몇개의 게시물 출력 결정 - PageCnt.pagesize
+   3) 한 블록당 보여질 페이지번호( [page번호] )  개수  - blockcount
+   4) 현재 page번호  - PageCnt.pageNo
+   5) 전체 페이지 수  - PageCnt.pageCnt
+   
+   
+   
+   
+#paging
+query.pagingSelect=select * from  (SELECT a.*, ROWNUM rnum FROM (SELECT * FROM Electronics ORDER BY writeday desc) a) where  rnum>=? and rnum <=? 
+query.totalCount=select count(*) from Electronics

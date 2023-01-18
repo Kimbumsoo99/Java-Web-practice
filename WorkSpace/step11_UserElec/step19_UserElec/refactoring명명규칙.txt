@@ -1,0 +1,130 @@
+
+ 1. 주요기능 <p>
+      1) 회원관리(로그인 / 로그아웃) - MEMBER Table <br>
+       2) 자료실 형태의 게시판관리 (등록, 수정, 삭제, 검색, 다운로드) - Electronics Table<P>
+      
+    2. 주요 기술 및 환경<p>
+     1) Refactoring MVC구조  <br>
+      2) Filter  - Session유무 체크 <br>
+                     : Board에 대한 접근은  인증된 사용자만 가능<br>
+             
+                  - POST 한글인코딩처리<br>
+     
+    3) ServletContextListener - 사전 초기화 작업 <br>
+    4) Servlet Upload + DownLoad <br>
+    5) 사용자 정의 Exception - AuthenticationException<br>
+    6) Action Tag include - Layout Template  <br>
+    7) Bootscrap UI <br>
+    8) Oracle 21c <br>
+    9) ApacheTomcat 9.0<br>
+
+--명명규칙 정하기
+view:
+ => elec폴더 -  list.jsp - 모든 게시물 보이기
+                   write.jsp - 등록
+                   read.jsp - 상세보기(수정버튼, 삭제버튼)
+                   update.jsp - 수정하기
+
+    error폴더 - error.jsp - 모든 오류메시지 처리하는 뷰
+    
+    user폴더 - login.jsp
+
+   /index.jsp  : 메인!
+
+   /js
+   /css
+   
+   common 폴더 - footer.jsp , header.jsp
+
+-----------------------------------------------------------------
+Controller: 
+     kosta.mvc.controller.DispatcherServlet.java - HttpServlet상속
+      => 모든 사용자 요청의 진입점(입구)
+      => 사용자 요청방식 - front?key=값&methodName=값
+
+
+
+
+    kosta.mvc.controller.Controller.java - interface
+     => 사용자의 요청에 해당하는 기능을 구현하게될 interface
+     => 메소드의 parameter정보로 request, response를 전달받아야함.
+     => 리턴 ModelAndView
+
+     => 회원관리
+         kosta.mvc.controller.UserController.java - 구현객체
+            : 로그인, 로그아웃 메소드 만든다.
+       
+     => 자료실관리
+         kosta.mvc.controller.ElectronicsController.java - 구현객체
+            : 등록, 수정, 삭제, 검색 메소드를 만든다.
+
+----------------------------------------------------------------------------
+Model : 
+   kosta.mvc.dto.Electronics.java 
+   kosta.mvc.dto.UserDTO.java
+   
+
+   kosta.mvc.service.ElectronicsService.java
+   kosta.mvc.service.ElectronicsServiceImpl.java
+   
+   kosta.mvc.service.UserService.java
+   kosta.mvc.service.UserServiceImpl.java
+   
+
+   kosta.mvc.dao.ElectronicsDAO.java  - interface
+   kosta.mvc.dao.ElectronicsDAOImpl.java - class (ElectronicsDAO 구현)
+   
+   kosta.mvc.dao.UserDAO.java
+   kosta.mvc.dao.UserDAOImpl.java
+   
+
+
+   kosta.mvc.util.DBUtil.java - DBCP로드, 연결, 닫기 
+            ( META-INF/context.xml문서필요)
+
+
+   kosta.mvc.listener.HandlerMappingListener.java 
+    => ServletContextListener를 implements 한다.
+    => web.xml문서에 <context-param>을 설정한후 getInitParametr()로 정보 읽어온다.
+    
+
+    => properties파일 읽어서 map에 저장한후 
+       map을 application에 저장한다.
+       사전초기화(미리 객체를 생성해서 map에 저장 -> application영역에 저장)
+       
+    => resources/actionMapping.properties 필요하다.
+       
+   resources/actionMapping.properties파일
+       : key=vaule의 형태로 생성해야할 객체이름 저장.
+
+
+   kosta.mvc.filter.EncodingFilter.java - Filter구현
+    => post방식 한글 인코딩처리.
+    
+    kosta.mvc.filter.SessionCheckFilter.java
+     => 세션유무체크!!
+
+
+  kosta.mvc.down.DownLoadServlet.java => 다운로드(HttpServlet상속)
+  
+  kosta.mvc.exception.AutenticationException 
+    : 로그인 실패할때 사용할 예외정보
+-------------------------------------------------------------
+
+ resources/schema폴더 - electronis.sql  , member.sql
+
+
+ * 라이브러리 :WEB-INF/lib 폴더안에   jstl, standard / 오라클 / cos.jar
+
+
+
+
+
+
+
+
+
+
+
+
+

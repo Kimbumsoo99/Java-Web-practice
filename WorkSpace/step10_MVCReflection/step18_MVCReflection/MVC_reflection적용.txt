@@ -1,0 +1,55 @@
+ ex) 프로젝트를 진행한다고 생각?
+  1) 회원관리
+      - 가입 : XxxController
+      -로그인 : XxxController
+      -로그아웃 : XxxController
+      -정보수정 : XxxController
+      -탈퇴 : XxxController
+
+  2) 게시판관리
+     - 등록 : XxxController
+     - 수정 : XxxController
+     - 전체검색 : XxxController
+    - 상세보기 : XxxController
+    - 댓글달기 : XxxController
+
+  3) 상품관리
+      - 등록 : XxxController
+      -수정 : XxxController
+      -삭제 : XxxController
+
+  4) 관리자 관리 
+
+=========================================
+ 1) 회원관리 - XxxController
+      - 가입 : 메소드 
+      - 로그인 : 메소드 
+      - 로그아웃 : 메소드 
+      - 정보수정 : 메소드 
+      -탈퇴 : 메소드 
+
+ 2) 게시판관리  - XxxController
+      등록 : 메소드 
+      수정 : 메소드 
+      삭제 : 메소드 
+      전체검색 : 메소드 
+
+ 3) 상품관리 - XxxController
+      등록 : 메소드 
+      수정 : 메소드 
+      삭제 : 메소드 
+      전체검색 : 메소드 
+
+========================================
+  *뷰에서 요청할때
+    ex)  front?key=select&methodName=login
+           : parameter 정보 중에 key는 어떤 XxxController를 실행해야하는 객체를 찾아주는 정보이고
+            methodName은 찾은 XxxController에 있는 어떤 메소드를 호출해야하는지 찾아주는 정보이다.
+
+
+
+
+
+
+
+
