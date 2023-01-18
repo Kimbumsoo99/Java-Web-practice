@@ -26,7 +26,9 @@ public class UpdateServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String addr = request.getParameter("addr");
-		System.out.println(id+" "+name+" "+age+" "+addr);
+		
+		//MemberDTO member = new MemberDTO(id, null,name, age, null,addr,null);
+		MemberDTO m = new MemberDTO(id,name,age,addr);
 		// 2. DAO 호출
 		MemberResultDAO dao = new MemberDAOimpl();
 		MemberDTO member = dao.selectById(id);

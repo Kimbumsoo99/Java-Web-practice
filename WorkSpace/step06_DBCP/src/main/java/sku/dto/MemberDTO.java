@@ -15,14 +15,17 @@ public class MemberDTO {
 	 * id, pwd, name, age, phone, addr, joinDate
 	 * */
 	public MemberDTO(String id, int pwd, String name, int age, String phone, String addr, String joinDate) {
-		super();
-		this.id = id;
+		this(id, name, age, addr);
 		this.pwd = pwd;
+		this.phone = phone;
+		this.joinDate = joinDate;
+	}
+
+	public MemberDTO(String id, String name, int age, String addr) {
+		this.id = id;
 		this.name = name;
 		this.age = age;
-		this.phone = phone;
 		this.addr = addr;
-		this.joinDate = joinDate;
 	}
 
 	public String getId() {

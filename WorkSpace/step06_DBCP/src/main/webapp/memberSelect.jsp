@@ -23,6 +23,13 @@ th, td {
 a {
 	text-decoration: none
 }
+.delete-btn{
+	background: white;
+	border: white;
+}
+.delete-btn:hover{
+	background: silver;
+}
 </style>
 <script type="text/javascript">
 	//호이스팅 개념!!
@@ -81,7 +88,7 @@ a {
 							<td>${member.addr}</td>
 							<td>${member.phone}</td>
 							<td>${member.joinDate}</td>
-							<td><input type="button" value="삭제" onclick="location.href='delete?id=${member.id}'"></td>
+							<td><input class="delete-btn" type="button" value="삭제" onclick="location.href=delete?id='${member.id}'"></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>

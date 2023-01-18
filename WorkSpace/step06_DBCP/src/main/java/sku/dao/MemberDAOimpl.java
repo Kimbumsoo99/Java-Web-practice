@@ -177,8 +177,6 @@ public class MemberDAOimpl implements MemberResultDAO {
 			ps.setString(3, member.getAddr());
 			ps.setString(4, member.getId());
 			result = ps.executeUpdate();
-			System.out.println(member.getName() +member.getAge() +member.getAddr() + member.getId());
-			System.out.println("수정시도 : "+sql);
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {

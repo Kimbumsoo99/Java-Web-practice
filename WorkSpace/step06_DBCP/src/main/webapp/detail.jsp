@@ -6,11 +6,30 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-  table {border: 5px groove pink; width:500px}
-  td,th{border:1px black solid ;  padding:10px}
+table {
+	border: 5px groove pink;
+	width: 500px
+}
 
-  input{border:solid 1px gray}
-  
+td, th {
+	border: 1px black solid;
+	padding: 10px
+}
+
+input {
+	border: solid 1px black
+}
+
+.detail-btn {
+	background: white;
+	width: 30%;
+	margin: 5px;
+}
+
+.detail-btn:hover {
+	background: pink;	
+	border : solid 1px white;
+}
 </style>
 </head>
 <body>
@@ -46,8 +65,9 @@
   </tr>
   <tr>
 	<td colspan="2" style="text-align: center;background-color: pink">
-	<input type="button" value="메인" onclick="location.href='index.jsp'"/>
-	<a href="${pageContext.request.contextPath}/updateForm?id=${member.id}">수정하기</a>
+	<input class="detail-btn" type="button" value="메인으로" onclick="location.href='index.jsp'">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input class="detail-btn" type="button" value="수정하기" onclick="location.href='${pageContext.request.contextPath}/updateForm?id=${member.id}'"/>
 	</td>
 	
   </tr>
