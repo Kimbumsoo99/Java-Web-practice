@@ -10,7 +10,7 @@
 <body>
 
 <blockquote>
-  <h1>KOSTA My Sevlet & Jsp Final !!!!</h1>
+  <h1>SKU My Sevlet & Jsp Final !!!!</h1>
   <h4>Sevlet&Jsp Final <cite title="Source Title">Wow!</cite></h4>
   <h4>
     1. 주요기능 <p>
@@ -25,7 +25,7 @@
 	  &nbsp;&nbsp;3) ServletContextListener - 사전 초기화 작업 <br>
 	  &nbsp;&nbsp;4) Servlet Upload + DownLoad <br>
 	  &nbsp;&nbsp;5) 사용자 정의 Exception - AuthenticationException<br>
-      &nbsp;&nbsp;6) Action Tag include - Layout Template  <br>
+      &nbsp;&nbsp;6) Action Tag include - Layout Template  <br>	
       &nbsp;&nbsp;7) Bootscrap UI <br>
       &nbsp;&nbsp;8) Oracle 11g <br>
       &nbsp;&nbsp;9) ApacheTomcat 9.0<br>

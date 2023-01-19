@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class SessionCheckFilter
  */
-@WebFilter("/front")
+//@WebFilter("/front")
 public class SessionCheckFilter implements Filter {
 	public void destroy() {}
 
