@@ -36,12 +36,12 @@ public class ElectronicsController implements Controller {
 			  pageNo="1";
 		  }
 		
-		//List<Electronics> list = elecService.selectAll();
+		List<Electronics> list = elecService.selectAll();
 		
-		  List<Electronics> list = elecService.selectAll( Integer.parseInt(pageNo) );
+		 // List<Electronics> list = elecService.selectAll( Integer.parseInt(pageNo) );
 		  
 		request.setAttribute("list", list);//뷰에서 ${list}
-		request.setAttribute("pageNo", pageNo); //뷰에서 ${pageNo}
+		//request.setAttribute("pageNo", pageNo); //뷰에서 ${pageNo}
 		
 		return new ModelAndView("elec/list.jsp"); //forward방식으로 이동
 	}
