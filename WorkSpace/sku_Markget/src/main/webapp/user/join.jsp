@@ -1,7 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
   table {border: 5px groove pink; width:500px}
@@ -10,20 +12,17 @@
   input{border:solid 1px gray}
   
 </style>
-<script type="text/javascript">
-   function goBack(){
-      history.back();
-   }
-</script>
 </head>
 <body>
 
-<form method="post" action="insert">
+<form method="post" action="${path}/front">
+<input type="hidden" name="key" value="user">
+<input type="hidden" name="methodName" value="join">
 <table cellspacing="0" align="center">
    <caption><h2> 회원가입 Form</h2></caption>
   <tr>
 	<td width="100px">ID</td>
-	<td width="400px"><input type="text" name="id" /></td>
+	<td width="400px"><input type="text" name="userId" /></td>
   </tr>
   <tr>
 	<td>PWD</td>
@@ -48,7 +47,7 @@
   <tr>
 	<td colspan="2" style="text-align: center;background-color: pink">
 	<input type="submit" value="가입" />
-	<input type="button" value="취소" onclick="goBack();"/>
+	<input type="button" value="취소" onclick="history.back()"/>
 	</td>
 	
   </tr>
@@ -56,9 +55,3 @@
 </form>
 </body>
 </html>
-
-
-
-
-
-
