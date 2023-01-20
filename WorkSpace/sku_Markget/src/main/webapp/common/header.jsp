@@ -15,7 +15,14 @@ href="${pageContext.request.contextPath}/css/bootstrap.min.css">
 <script 
 src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
 
-
+<style type="text/css">
+.mypage tr,td{
+	padding: 3px;
+}
+.junggoBoardTop{
+	background: orange;
+}
+</style>
 
 </head>
 <body>

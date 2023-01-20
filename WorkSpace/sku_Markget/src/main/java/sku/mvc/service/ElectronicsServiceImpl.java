@@ -74,7 +74,7 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 	public void update(Electronics electronics) throws SQLException {
 		//전달된 비번과 DB에저장된 비번이 일치하는지 먼저 체크한다.
 		Electronics dbElec = elecDAO.selectByModelNum(electronics.getModelNum());
-		
+		System.out.println(dbElec.getPassword());
 		if(dbElec == null) {
 			throw new SQLException("모델번호 오류로 수정할수 없습니다.");
 			

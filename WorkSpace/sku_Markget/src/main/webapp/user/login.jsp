@@ -36,8 +36,9 @@
 		<div class="jumbotron">
 			<h1>회원 정보</h1>
 			<hr>
-			<table cellspacing="0" align="center">
-				<tr>
+			<blockquote>
+			<table cellspacing="5px" class="myPage">
+				<tr >
 					<td width="100px">ID</td>
 					<td width="400px">${loginUser.userId}</td>
 				</tr>
@@ -50,7 +51,7 @@
 					<td>${loginUser.name }</td>
 				</tr>
 				<tr>
-					<td>age</td>
+					<td>Age</td>
 					<td>${loginUser.age }</td>
 				</tr>
 				<tr>
@@ -63,6 +64,7 @@
 				</tr>
 
 			</table>
+			</blockquote>
 			<p>
 				<a class="btn btn-primary btn-lg" href="${path}/user/update.jsp">수정하기</a>
 			</p>

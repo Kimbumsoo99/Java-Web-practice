@@ -140,7 +140,7 @@ public class ElectronicsController implements Controller {
 		HttpSession session = request.getSession();
 		UserDTO userDTO = (UserDTO) session.getAttribute("loginUser");
 		String password = userDTO.getPwd();
-		
+		System.out.println("패스워드"+password);
 		String pageNo = request.getParameter("pageNo");
 		
 		elecService.update( new Electronics(modelNum, modelName, Integer.parseInt(price), 

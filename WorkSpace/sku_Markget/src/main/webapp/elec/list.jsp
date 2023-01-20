@@ -97,8 +97,8 @@ img{width:200px; height:350px}
 
 
 
-<table align="center" border="0" cellpadding="5" cellspacing="2" width="100%" bordercolordark="white" bordercolorlight="black">
-<caption><h2 align="center">상품(Electronic) LIST</h2></caption>
+<table class="junggoBoard" align="center" border="0" cellpadding="5" cellspacing="2" width="100%" bordercolordark="white" bordercolorlight="black">
+<caption><h2 align="center">중고 게시판</h2></caption>
 	<colgroup>
 		<col width="8%"/>
 		<col width="30%"/>
@@ -109,27 +109,27 @@ img{width:200px; height:350px}
 		<col width="7%"/>
 	</colgroup>
 	<tr>
-        <td bgcolor="#00cc00">
+        <td class="junggoBoardTop">
             <p align="center">
             <font color="white"><b><span style="font-size:13pt;">글번호</span></b></font></p>
         </td>
-        <td bgcolor="#00cc00">
+        <td class="junggoBoardTop">
             <p align="center"><font color="white"><b><span style="font-size:13pt;">상품이름</span></b></font></p>
         </td>
-        <td bgcolor="#00cc00">
+        <td class="junggoBoardTop">
             <p align="center"><font color="white"><b><span style="font-size:13pt;">가격</span></b></font></p>
         </td>
-        <td bgcolor="#00cc00">
+        <td class="junggoBoardTop">
             <p align="center"><font color="white"><b><span style="font-size:13pt;">날짜</span></b></font></p>
         </td>
         
-        <td bgcolor="#00cc00">
+        <td class="junggoBoardTop">
             <p align="center"><font color="white"><b><span style="font-size:13pt;">첨부파일</span></b></font></p>
         </td>
-        <td bgcolor="#00cc00">
+        <td class="junggoBoardTop">
             <p align="center"><font color="white"><b><span style="font-size:13pt;">작성자</span></b></font></p>
         </td>
-        <td bgcolor="#00cc00">
+        <td class="junggoBoardTop">
             <p align="center"><font color="white"><b><span style="font-size:13pt;">조 회 수</span></b></font></p>
         </td>
     </tr>
