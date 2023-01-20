@@ -89,6 +89,18 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 
 	}
 
+	@Override
+	public List<Electronics> selectBymodelName(String modelName) throws SQLException {
+		List<Electronics>  list = elecDAO.selectByAllModelNum(modelName);
+		return list;
+	}
+
+	@Override
+	public List<Electronics> selectByWriteUser(String writeUser) throws SQLException {
+		List<Electronics>  list = elecDAO.selectByAllWriteUser(writeUser);
+		return list;
+	}
+
 }
 
 

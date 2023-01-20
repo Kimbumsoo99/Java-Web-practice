@@ -196,11 +196,37 @@ img{width:200px; height:350px}
 </table>
 <hr>
 <div align=right>
+<form name="search" action="${path}/front" method="post">
+	<select name="keyField">
+		<option value="0">제목</option>
+		<option value="1">글쓴이</option>	
+	</select> <span>게시글 검색 : <input type="text" name="keyword" /> <input
+			type="button" value="검색" onclick="selectBoard()" />
+		</span>
+		<input type="hidden" name="key" value="elec"/>
+		<input type="hidden" name="methodName" value="selectKeyword"/>
+		
+	</form>
 <c:if test="${not empty sessionScope.loginUser}">
   <span style="font-size:12pt;">&lt;<a href="${path}/elec/write.jsp">글쓰기</a>&gt;</span>
 </c:if>
 </div>
 <hr color="red">
+
+<script>
+	function selectBoard() {
+		//keyFiled와 keyWord에 값이 있는지 체크한다.
+		if (document.search.keyword.value == "") {
+			alert("검색단어를 입력하세요.");
+			document.search.keyword.focus();
+			return;
+		}
+		//여기까지 오면 전송한다.
+		
+		document.search.submit(); //폼 전송
+	}
+</script>
+
 <jsp:include page="../common/footer.jsp"/>
 
 

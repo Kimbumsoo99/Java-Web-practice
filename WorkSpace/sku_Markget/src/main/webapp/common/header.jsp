@@ -49,7 +49,7 @@ src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
 	      	<li><a href="${path}/front?key=user&methodName=logout" class="btn btn-danger">로그아웃</a></li>	     
       </c:when>
       <c:otherwise>
-      	    <li class="active"><a href="${path}/user/login.jsp">로그인</a></li>
+       		<li class="active"><a href="${path}/user/login.jsp">로그인</a></li>
 	      	<li><a href="${path}/user/join.jsp" class="btn btn-danger">회원가입</a></li>
       </c:otherwise>
      </c:choose>

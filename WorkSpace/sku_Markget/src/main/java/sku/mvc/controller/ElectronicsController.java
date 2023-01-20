@@ -48,6 +48,24 @@ public class ElectronicsController implements Controller {
 		return new ModelAndView("elec/list.jsp"); //forward방식으로 이동
 	}
 	
+	/**
+	 * 부분 검색
+	 * */
+	public ModelAndView selectKeyword(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		String mode = request.getParameter("keyField");
+		String keyword = request.getParameter("keyword");
+		System.out.println(mode);
+		System.out.println("키워드 : "+keyword);
+		List<Electronics> list=null;
+		if(mode.equals("0")) {
+			list = elecService.selectBymodelName(keyword);						
+		}else if(mode.equals("1")) {
+			list = elecService.selectByWriteUser(keyword);
+		}
+		request.setAttribute("list", list);
+		
+		return new ModelAndView("elec/list.jsp");
+	}
 	
 	/**
 	 * 등록하기

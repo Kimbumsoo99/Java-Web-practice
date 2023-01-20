@@ -21,6 +21,9 @@ public interface ElectronicsService{
 	   * */
 	  void insert(Electronics electronics) throws SQLException;
 	 
+	  List<Electronics> selectBymodelName(String modelName) throws SQLException;
+	  
+	  List<Electronics> selectByWriteUser(String writeUser) throws SQLException;
 	  
 	  /**
 	   * ElectronicsDAOImpl의 모델번호에 해당하는 레코드 검색하는 메소드 호출

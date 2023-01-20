@@ -163,6 +163,7 @@ function commentDelete(replyContent,replyNum){
 					<td width="20%" height="30" colspan="3">
 						<p align="right"  margin=0>
 							<font color="black" size="3"><b>
+							<c:if test="${reply.replyWriteUser eq elec.writeUser}">(작성자)</c:if>
 									${reply.replyWriteUser} : </b></font>
 						</p>
 					</td>
@@ -171,7 +172,8 @@ function commentDelete(replyContent,replyNum){
 							<font color="black" size="3"><b> &nbsp;&nbsp;
 									${reply.replyContent} </b></font>
 						</p>
-						<div style="text-align: right;"><input id="reply-delete" type="button" value="❌" onclick="commentDelete('${reply.replyContent}','${reply.replyNum}')" ></div>
+						<div style="text-align: right;">
+						<c:if test="${reply.replyWriteUser eq loginUser.userId}"><input id="reply-delete" type="button" value="❌" onclick="commentDelete('${reply.replyContent}','${reply.replyNum}')" ></c:if></div>
 					</td>
 				</tr>
 				<tr>

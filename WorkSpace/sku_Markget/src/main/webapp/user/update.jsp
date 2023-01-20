@@ -6,11 +6,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-  table {border: 5px groove pink; width:500px}
-  td,th{border:1px black solid ;  padding:10px}
+table {
+	width: 50%;
+	font-size: 20px;
+}
 
-  input{border:solid 1px gray}
-  
+td, th {
+	border: 1px black solid;
+	padding: 30px 10px;
+}
+
+.updateInput {
+	font-size: 20px;
+	border: solid 1px gray
+}
 </style>
 </head>
 <body>
@@ -19,9 +28,12 @@
 <input type="hidden" name="key" value="user"/>
 <input type="hidden" name="methodName" value="update"/>
 <input type="hidden" name="userId" value="${loginUser.userId}"/>
-<input type="hidden" name="userId" value="${loginUser.pwd}"/>
+<input type="hidden" name="pwd" value="${loginUser.pwd}"/>
 
 <table cellspacing="0" align="center">
+<tr>
+	<td colspan="2" width="500px" style="text-align: center;background: skyblue">회원 정보</td>
+</tr>
   <tr>
 	<td width="100px">ID</td>
 	<td width="400px">${loginUser.userId}</td>
@@ -32,22 +44,22 @@
   </tr>
   <tr>
 	<td>NAME</td>
-	<td><input type="text" name="name" value="${loginUser.name}"/></td>
+	<td><input class="updateInput" type="text" name="name" value="${loginUser.name}"/></td>
   </tr>
   <tr>
 	<td>age</td>
-	<td><input type="text" name="age" value="${loginUser.age}"/></td>
+	<td><input class="updateInput" type="text" name="age" value="${loginUser.age}"/></td>
   </tr>
   <tr>
 	<td>Phone</td>
-	<td><input type="text" name="phone" value="${loginUser.phone}"/></td>
+	<td><input class="updateInput" type="text" name="phone" value="${loginUser.phone}"/></td>
   </tr>
   <tr>
 	<td>Addr</td>
-	<td><input type="text" name="addr" value="${loginUser.addr}" size="50"/></td>
+	<td><input class="updateInput" type="text" name="addr" value="${loginUser.addr}" size="50"/></td>
 
   <tr>
-	<td colspan="2" style="text-align: center;background-color: pink">
+	<td colspan="2" style="text-align: center;background-color: skyblue">
 	<input type="submit" value="수정 완료"/>
 	<input type="button" value="수정 취소" onclick="history.back()"/>
 	</td>

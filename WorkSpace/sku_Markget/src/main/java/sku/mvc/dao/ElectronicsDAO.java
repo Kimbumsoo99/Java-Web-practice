@@ -21,6 +21,10 @@ public interface ElectronicsDAO {
 	   * */
 	  Electronics selectByModelNum(String modelNum) throws SQLException;
 	  
+	  List<Electronics> selectByAllWriteUser(String writeUser) throws SQLException;
+	  List<Electronics> selectByAllModelNum(String modelName) throws SQLException;
+	  
+	  
 	  /**
 	   * 조회수를 증가하는 기능
 	   * update Electronics set readnum = readnum + 1 where model_num=?

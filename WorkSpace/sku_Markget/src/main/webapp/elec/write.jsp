@@ -42,7 +42,7 @@ function checkValid() {
 </HEAD>
 <BODY>
 
-<form name="writeForm" method="post" action="${path}/front?key=elec&methodName=insert?userId=${loginUser}" 
+<form name="writeForm" method="post" action="${path}/front?key=elec&methodName=insert&userId=${loginUser}" 
   onSubmit='return checkValid()' enctype="multipart/form-data">
 <!-- 
      아래 문장으로 전송하면 post방식으로 전송이되고 현재 파일업로드때문에 enctype="multipart/form-data" 설정되어 있기때문에 
