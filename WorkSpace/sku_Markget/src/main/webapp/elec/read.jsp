@@ -21,13 +21,12 @@ function sendUpdate(){
 	document.requestForm.submit();
 }
 
-
-
 function sendDelete(){
 	const isDelete = confirm("삭제하시겠습니까?");
 	if(isDelete===true){
 		const pwd = prompt("비밀번호를 입력해주세요");
-		if(pwd==${loginUser.pwd}){
+		const loginPwd="${loginUser.pwd}"
+		if(pwd==loginPwd){
 			document.requestForm.methodName.value ="delete";
 			document.requestForm.submit();
 			return;
@@ -36,10 +35,25 @@ function sendDelete(){
 	}else return;
 	
 }
+function commentUser(){
+	const userId="${loginUser.userId}"
+	if(userId==="") {
+		alert("로그인하고 댓글을 작성해주세요.");
+		return;
+	}
+	document.commentForm.methodName.value="insert";
+	document.commentForm.submit();
+	
+}
+function commentDelete(replyContent,replyNum){
+	document.commentForm.methodName.value="delete";
+	document.commentForm.replyComment.value=replyContent;
+	document.commentForm.replyNum.value=replyNum;
+	document.commentForm.submit();
+}
 </script>
-
-
 </HEAD>
+
 <table align="center" cellpadding="5" cellspacing="2" width="600" border='1'>
     <tr>
         <td width="1220" height="20" colspan="4" bgcolor="#00cc00">
@@ -125,9 +139,16 @@ function sendDelete(){
 			</c:if>
 </table>
 <hr>
+
+<form name="commentForm" method=post action="${path}/front">
  <h4> 댓글정보 LIST </h4>
- <textarea style="width: 100%" name="reply" cols="" rows="4" placeholder="댓글을 입력하세요.(200자이내)"></textarea>
- <input type="button" value="등록" style="width: 10%;height: 30px;border-radius: 10%;"/><p>
+ <textarea name="replyContent" style="width: 100%" name="reply" cols="" rows="4" placeholder="댓글을 입력하세요.(200자이내)"></textarea>
+ <input type="button" value="등록" style="width: 10%;height: 30px;border-radius: 10%;" onclick="commentUser()"/><p>
+ <input type="hidden" name="key" value="reply"/>
+ <input type="hidden" name="replyWriteUser" value="${loginUser.userId}"/>
+ <input type="hidden" name="modelNum" value="${elec.modelNum}"/>
+
+ 
  <hr color="red">
  <c:choose>
    <c:when test="${empty elec.repliesList}">
@@ -150,7 +171,7 @@ function sendDelete(){
 							<font color="black" size="3"><b> &nbsp;&nbsp;
 									${reply.replyContent} </b></font>
 						</p>
-						<div style="text-align: right;"><input id="reply-delete" type="button" value="❌" ></div>
+						<div style="text-align: right;"><input id="reply-delete" type="button" value="❌" onclick="commentDelete('${reply.replyContent}','${reply.replyNum}')" ></div>
 					</td>
 				</tr>
 				<tr>
@@ -161,12 +182,15 @@ function sendDelete(){
 					</td>
 				</tr>
 			</table>
-          
+          	<hr>
        </c:forEach>
    </c:otherwise>
  </c:choose>
 <!-- ${reply.replyNum} / ${reply.replyContent} / ${reply.replyRegdate}<br> -->
-
+<input type="hidden" name="methodName" value="">
+<input type="hidden" name="replyComment" value="">
+<input type="hidden" name="replyNum" value="">
+</form>
 <jsp:include page="../common/footer.jsp"/>
 
 

@@ -2,14 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../common/header.jsp"/>
-<div class="jumbotron">
-	<h1>Login</h1>
-	<p>Login, AOP/HttpSession</p>
-	<p>
-		<a class="btn btn-primary btn-lg" href="${path}/user/update.jsp">수정하기</a>
-	</p>
-</div>
-
 <c:choose>
 	<c:when test="${empty loginUser}">
 		<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/front">
@@ -41,22 +33,51 @@
 		</form>
 	</c:when>
 	<c:otherwise>
-			<legend>Login</legend>
+		<div class="jumbotron">
+			<h1>회원 정보</h1>
+			<hr>
+			<table cellspacing="0" align="center">
+				<tr>
+					<td width="100px">ID</td>
+					<td width="400px">${loginUser.userId}</td>
+				</tr>
+				<tr>
+					<td>PWD</td>
+					<td>${loginUser.pwd}</td>
+				</tr>
+				<tr>
+					<td>NAME</td>
+					<td>${loginUser.name }</td>
+				</tr>
+				<tr>
+					<td>age</td>
+					<td>${loginUser.age }</td>
+				</tr>
+				<tr>
+					<td>Phone</td>
+					<td>${loginUser.phone }</td>
+				</tr>
+				<tr>
+					<td>Addr</td>
+					<td>${loginUser.addr }</td>
+				</tr>
+
+			</table>
+			<p>
+				<a class="btn btn-primary btn-lg" href="${path}/user/update.jsp">수정하기</a>
+			</p>
+		</div>
+		<legend>${loginName}님의 즐겨찾기</legend>
 			<blockquote>
 				<p>My Shopping Mall!</p>
 
 				<div class="alert alert-dismissible alert-warning">
 					<p>
-						<a href="#" class="alert-link">${loginName}님의 즐겨찾기 입니다.</a>
+						<a href="#" class="alert-link">삼성샌스 게시판 이동</a>
 					</p>
+					<hr>
 					<p>
-						<a href="#" class="alert-link">${loginName}님의 즐겨찾기 입니다.</a>
-					</p>
-					<p>
-						<a href="#" class="alert-link">${loginName}님의 즐겨찾기 입니다.</a>
-					</p>
-					<p>
-						<a href="#" class="alert-link">${loginName}님의 즐겨찾기 입니다.</a>
+						<a href="#" class="alert-link">Galaxy Note II 이동</a>
 					</p>
 				</div>
 			</blockquote>

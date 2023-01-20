@@ -15,6 +15,8 @@ href="${pageContext.request.contextPath}/css/bootstrap.min.css">
 <script 
 src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
 
+
+
 </head>
 <body>
 <div class="navbar navbar-default" >
